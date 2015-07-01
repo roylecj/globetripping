@@ -1,0 +1,43 @@
+<template name="tripEdit">
+
+  <form class="main form page">
+      <label class="control-label" for="destinationCity">Destination</label>
+      <div class="controls">
+          <input name="destinationCity" id="destinationCity" type="text" value="{{destinationCity}}" placeholder="Travelling to this city" class="form-control"/>
+  <!--        <span class="help-block">{{errorMessage 'destinationCity'}}</span> -->
+      </div>
+      <label class="control-label" for="tripDescription">Description</label>
+      <div class="controls">
+          <input name="tripDescription" id="tripDescription" type="text" value="{{tripDescription}}" placeholder="Describe your trip" class="form-control"/>
+  <!--        <span class="help-block">{{errorMessage 'tripDescription'}}</span> -->
+      </div>
+
+      <label class="control-label" for="startDate">Leaving</label>
+
+      <div class='controls'>
+          <div class="form-group">
+            <div class="input-group datepicker">
+              <input name="startDate" id="startDate" type="date" class="form-control">
+            </div>
+          </div>
+      </div>
+
+      <label class="control-label" for="endDate">Returning</label>
+
+      <div class='controls'>
+          <div class="form-group">
+            <div class="input-group datepicker">
+              <input name="endDate" id="endDate" type="date" class="form-control">
+            </div>
+          </div>
+      </div>
+
+    <input type="submit" value="Submit" class="btn btn-primary submit"/>
+    <hr/>
+
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-danger delete" data-toggle="modal" data-target="#myModal">Delete Trip</button>
+
+  </form>
+
+</template>

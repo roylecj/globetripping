@@ -1,0 +1,16 @@
+<template name="tripList">
+<div class="list-group">
+  <div class="row">
+    <div class="col-sm-4">
+      {{#each trips}}
+        {{> tripItem}}
+      {{/each}}
+    </div>
+    <div class="col-sm-8">
+      {{#if tripSelected}}
+        {{> tripEdit}}
+      {{/if}}
+    </div>
+  </div>
+</div>
+</template>
