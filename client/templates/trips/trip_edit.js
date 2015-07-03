@@ -5,7 +5,19 @@ Template.tripEdit.onCreated(function() {
     action: ''});
 });
 
+Template.tripEdit.onRendered(function() {
+    this.$('.datetimepicker').datetimepicker({
+      format: 'DD MMM YYYY'
+    });
+});
+
 Template.tripEdit.helpers({
+    startValidDate: function() {
+        return this.endDate;
+        },
+    endValidDate: function() {
+        return this.startDate;
+      },
     messageDeleteAction: function() {
         return Session.get('tripDeleteAction')['message'];
           },
@@ -40,11 +52,13 @@ Template.tripEdit.events({
 
       var currentTripId = this._id;
 
+      console.log("currentTripId = " + currentTripId);
+
       var tripProperties = {
         tripDescription: $(e.target).find('[name=tripDescription]').val(),
         destinationCity: $(e.target).find('[name=destinationCity]').val(),
         startDate: $(e.target).find('[name=startDate]').val(),
-        endDate: $(e.target).find('[name=endDate').val()
+        endDate: $(e.target).find('[name=endDate]').val()
       };
 
 //      var errors = validatePost(post);
@@ -52,17 +66,17 @@ Template.tripEdit.events({
 //      if (errors.title || errors.url)
 //        return Session.set('postSubmitErrors', errors);
 
-      Meteor.call('tripInsert', tripProperties, function(error, result) {
+      Meteor.call('tripUpdate', currentTripId, tripProperties, function(error, result) {
         // display an error, if there is one...
+/*
+        if (error) {
+          throwError(error.reason);
+        }
 
-//        if (error) {
-//          throwError(error.reason);
-//        }
-
-//        if (result.postExists) {
-//          throwError('This link has already been posted');
-//        }
-
+        if (result.postExists) {
+          throwError('This link has already been posted');
+        }
+*/
         Router.go('tripList');
 
       });
@@ -71,7 +85,6 @@ Template.tripEdit.events({
 
     var currentTripId = this._id;
     console.log(this._id);
-
 
     bootbox.confirm("Are you sure?", function(result) {
       if (result) {

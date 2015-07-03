@@ -4,15 +4,17 @@ if (Trips.find().count() === 0) {
   Trips.insert({
     destinationCity: "Tokyo",
     tripDescription: "Planning to go skiing and to Tokyo Disney.",
-    startDate: "2015-01-30",
-    endDate: "2015-02-20"
+    startDate: new Date(2015,01,30),
+    endDate: new Date(2015,02,20),
+    image: "tokyo.jpg"
   });
 
   Trips.insert({
     destinationCity: "Melbourne",
     tripDescription: "Visiting Suzy and Rob.",
-    startDate: "2015-03-29",
-    endDate: "2015-04-01"
+    startDate: new Date(2015,03,29),
+    endDate: new Date(2015,04,01),
+    image: "melbourne.jpg"
   });
 };
 
@@ -20,18 +22,18 @@ if (Friends.find().count() === 0 ) {
   Friends.insert({
     emailAddress: "kyliearantz@gmail.com",
     friendName: "Kylie Arantz",
-    image: "lib/images/k.jpg"
+    image: "k.jpg"
   });
 
   Friends.insert({
     emailAddress: "narantz@gmail.com",
     friendName: "Naomi Arantz",
-    image: "lib/images/n.jpg"
+    image: "n.jpg"
   });
 
   Friends.insert({
     emailAddress: "asn@gmail.com",
     friendName: "Andrew Needham",
-    image: "lib/images/a.jpg"
+    image: "a.jpg"
   });
 }
