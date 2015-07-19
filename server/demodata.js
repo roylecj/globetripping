@@ -22,18 +22,28 @@ if (Friends.find().count() === 0 ) {
   Friends.insert({
     emailAddress: "kyliearantz@gmail.com",
     friendName: "Kylie Arantz",
-    image: "k.jpg"
+    image: "k.jpg",
+    friendStatus: "FRIEND"
   });
 
   Friends.insert({
     emailAddress: "narantz@gmail.com",
     friendName: "Naomi Arantz",
-    image: "n.jpg"
+    image: "n.jpg",
+    friendStatus: "FRIEND"
   });
 
   Friends.insert({
     emailAddress: "asn@gmail.com",
     friendName: "Andrew Needham",
-    image: "a.jpg"
+    image: "a.jpg",
+    friendStatus: "FRIEND"
   });
+
+  Friends.insert({
+    emailAddress: "mparcell@gmail.com",
+    friendName: "Michelle Parcell",
+    image: "m.jpg",
+    friendStatus: "INVITE"
+  })
 }

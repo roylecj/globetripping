@@ -1,12 +1,21 @@
 <template name="friendInvitationItem">
+  <a class="list-group-item">
+  <div class="row">
+    <div class="col-sm-1">
+      <img class="pull-left img-rounded" height=50 width=50 src="{{image}}" />
+    </div>
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-6">
+      <h4 class="list-group-item-heading">{{friendName}}</h4>
+      <p class="list-group-item-text">{{emailAddress}}</p>
+    </div>
 
-      <div class="col-sm-1">
-      </div>
-      <div class="col-sm-1">
-      </div>
-      <div class="col-sm-6">
-        <h4 class="list-group-item-heading">{{friendName}}</h4>
-        <p class="list-group-item-text">{{emailAddress}}</p>
-      </div>
+    <a class="btn btn-primary btn-xs glyphicon glyphicon-envelope"></a>
+    <a class="btn btn-primary btn-xs glyphicon glyphicon-pencil"></a>
 
+    <a class="deleteX pull-right btn btn-danger btn-xs glyphicon glyphicon-remove"></a>
+
+  </div>
+</a>
 </template>

@@ -1,0 +1,3 @@
+template.friendInvitationItem.helpers({
+    
+});

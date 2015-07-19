@@ -39,19 +39,25 @@
   -->
 
   {{#if isCurrentMenu 'friends' 'option'}}
-  <a href="{{pathFor 'friendAdd'}}" class="btn btn-default"><span class="glyphicon glyphicon-envelope"></span>  Invite a Friend</a>
+    <a href="{{pathFor 'friendAdd'}}" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-envelope"></span>  Invite a Friend</a>
+    {{#if friendCount}}
+      <button class="friendSwitch btn {{friendButton}} btn-sm">Friends <span class="badge">{{friendCount}}</span></button>
+    {{/if}}
+    {{#if invitationCount}}
+      <button href="#" class="inviteSwitch btn {{inviteButton}} btn-sm">Invitations <span class="badge">{{invitationCount}}</span></button>
+    {{/if}}
   {{/if}}
 
   {{#if isCurrentMenu 'trips' 'option'}}
-  <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>  Plan a Trip</a>
+  <a href="#" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span>  Plan a Trip</a>
   {{/if}}
 
   {{#if isCurrentMenu 'ideas' 'option'}}
-  <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>  Add an Idea</a>
+  <a href="#" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span>  Add an Idea</a>
   {{/if}}
 
   {{#if isCurrentMenu 'todo' 'option'}}
-  <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>  Add a Reminder</a>
+  <a href="#" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span>  Add a Reminder</a>
   {{/if}}
 
   <!-- We need to add some space -->

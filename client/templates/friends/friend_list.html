@@ -3,23 +3,25 @@
     <div class="row">
       <div class="col-sm-4">
 
-        {{#each friends}}
-          {{> friendItem}}
-        {{/each}}
+        {{#if showFriends}}
+          {{#each friends}}
+            {{> friendItem}}
+          {{/each}}
+        {{/if}}
 
         {{#if invitationCount}}
-        <a href="#" class="list-group-item">
-          <div class="row">
-            <div class="col-sm-4">
-              <p>Invitations</p>
-            </div>
-          </div>
-          <div class="row">
-          {{#each friendInvitations}}
-            {{> friendInvitationItem}}
-          {{/each}}
-          </div>
-        </a>
+          {{#if showInvites}}
+            <a href="#" class="list-group-item-heading">
+              <div class="row">
+                <div class="col-sm-4">
+                  <p>Invitations</p>
+                </div>
+              </div>
+            </a>
+            {{#each friendInvitations}}
+              {{> friendInvitationItem}}
+            {{/each}}
+          {{/if}}
         {{/if}}
 
       </div>
