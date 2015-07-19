@@ -1,0 +1,14 @@
+<template name="friendAdd">
+  <form class="main form page">
+    <label class="control-label" for="emailAddress">Email Address</label>
+      <div class="controls">
+          <input name="emailAddress" id="emailAddress" type="text" value="{{emailAddress}}" placeholder="friend@email.com" class="form-control"/>
+      </div>
+      <label class="control-label" for="invitation">Invitation Message</label>
+      <div class="controls">
+          <input name="invitation" id="invitation" type="text" value="{{invitation}}" placeholder="Please join me on GlobeTrippers" class="form-control"/>
+      </div>
+      <br/>
+    <input type="submit" value="Invite" class="btn btn-primary submit" />
+  </form>
+</template>

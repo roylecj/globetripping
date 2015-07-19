@@ -7,7 +7,7 @@ Template.tripEdit.onCreated(function() {
 
 Template.tripEdit.onRendered(function() {
     this.$('.datetimepicker').datetimepicker({
-      format: 'DD MMM YYYY'
+      format: globalDateFormat
     });
 });
 
@@ -18,6 +18,12 @@ Template.tripEdit.helpers({
     endValidDate: function() {
         return this.startDate;
       },
+    startDate: function() {
+        return moment(this.startDate).format(globalDateFormat);
+    },
+    endDate: function() {
+        return moment(this.endDate).format(globalDateFormat);
+    },
     messageDeleteAction: function() {
         return Session.get('tripDeleteAction')['message'];
           },
@@ -57,18 +63,13 @@ Template.tripEdit.events({
       var tripProperties = {
         tripDescription: $(e.target).find('[name=tripDescription]').val(),
         destinationCity: $(e.target).find('[name=destinationCity]').val(),
-        startDate: $(e.target).find('[name=startDate]').val(),
-        endDate: $(e.target).find('[name=endDate]').val()
+        startDate: new Date($(e.target).find('[name=startDate]').val()),
+        endDate: new Date($(e.target).find('[name=endDate]').val())
       };
-
-//      var errors = validatePost(post);
-
-//      if (errors.title || errors.url)
-//        return Session.set('postSubmitErrors', errors);
 
       Meteor.call('tripUpdate', currentTripId, tripProperties, function(error, result) {
         // display an error, if there is one...
-/*
+
         if (error) {
           throwError(error.reason);
         }
@@ -76,7 +77,7 @@ Template.tripEdit.events({
         if (result.postExists) {
           throwError('This link has already been posted');
         }
-*/
+
         Router.go('tripList');
 
       });

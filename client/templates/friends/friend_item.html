@@ -10,6 +10,11 @@
         <h4 class="list-group-item-heading">{{friendName}}</h4>
         <p class="list-group-item-text">{{emailAddress}}</p>
       </div>
+      <span class="deleteX pull-right btn btn-danger btn-xs glyphicon glyphicon-remove  {{isDeleteFocus 'x'}}"></span>
+<!--
+      <span class="deleteButton pull-right btn btn-danger btn-xs {{isDeleteFocus 'button'}}">Delete</span>
+      <span class="deleteButton pull-right btn btn-success btn-xs {{isDeleteFocus 'button'}}">Cancel</span>
+-->
     </div>
   </a>
 </template>

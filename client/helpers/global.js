@@ -3,7 +3,7 @@
 // Source: https://atmospherejs.com/juliancwirko/s-alert
 
 Meteor.startup(function () {
-
+/*
     sAlert.config({
         effect: '',
         position: 'bottom-right',
@@ -13,4 +13,10 @@ Meteor.startup(function () {
         stack: true,
         offset: 0
     });
+    */
+
 });
+
+// Global Variables go here...
+
+globalDateFormat = 'DD MMM YYYY';
