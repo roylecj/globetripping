@@ -6,7 +6,8 @@ if (Trips.find().count() === 0) {
     tripDescription: "Planning to go skiing and to Tokyo Disney.",
     startDate: new Date(2015,01,30),
     endDate: new Date(2015,02,20),
-    image: "tokyo.jpg"
+    image: "tokyo.jpg",
+    category: "luxury"
   });
 
   Trips.insert({
@@ -14,7 +15,8 @@ if (Trips.find().count() === 0) {
     tripDescription: "Visiting Suzy and Rob.",
     startDate: new Date(2015,03,29),
     endDate: new Date(2015,04,01),
-    image: "melbourne.jpg"
+    image: "melbourne.jpg",
+    category: "camping"
   });
 };
 
@@ -45,5 +47,19 @@ if (Friends.find().count() === 0 ) {
     friendName: "Michelle Parcell",
     image: "m.jpg",
     friendStatus: "INVITE"
-  })
+  });
+};
+
+if (TripCategories.find().count() === 0) {
+  TripCategories.insert({
+    category: "Camping",
+    categoryImage: "camping.png",
+    description: "Going camping"
+  });
+
+  TripCategories.insert({
+    category: "Luxury",
+    categoryImage: "luxury.png",
+    description: "Bit of Luxe"
+  });
 }

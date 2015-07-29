@@ -13,3 +13,9 @@ Meteor.publish('ideas', function() {
 Meteor.publish('invitations', function() {
   return Friends.find({friendStatus: 'INVITE'});
 });
+Meteor.publish('tripCategories', function() {
+  return TripCategories.find();
+});
+Meteor.publish('userProfiles', function() {
+  return UserProfiles.find();
+})
