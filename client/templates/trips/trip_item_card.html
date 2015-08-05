@@ -1,0 +1,40 @@
+<template name="tripItemCard">
+  <!--
+    using a new version with Semantic UI
+  -->
+  <div class="ui people shape">
+  <div class="sides">
+    <div class="side active">
+      <div class="ui card">
+        <div class="image">
+          <img src="{{image}}">
+        </div>
+        <div class="content">
+          <a class="header">{{destinationCity}}</a>
+          <div class="meta">
+            <span class="date">{{startDate}} - {{endDate}}</span>
+          </div>
+          <div class="description">
+              {{tripDescription}}
+          </div>
+        </div>
+        <div class="extra content">
+          <a>
+            <i class="user icon"></i>
+            22 Friends
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sides">
+    <div class="side">
+      <div class="ui card">
+        This is a test
+      </div>
+    </div>
+  </div>
+
+</div>
+</template>
