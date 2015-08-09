@@ -1,3 +1,36 @@
 <template name="tripAdd">
-  
+
+    <form class="main form page">
+        <label class="control-label" for="destinationCity">Destination</label>
+        <div class="controls">
+            <input name="destinationCity" id="destinationCity" type="text" value="{{destinationCity}}" placeholder="Travelling to this city" class="form-control"/>
+    <!--        <span class="help-block">{{errorMessage 'destinationCity'}}</span> -->
+        </div>
+        <label class="control-label" for="tripDescription">Description</label>
+        <div class="controls">
+            <input name="tripDescription" id="tripDescription" type="text" value="{{tripDescription}}" placeholder="Describe your trip" class="form-control"/>
+    <!--        <span class="help-block">{{errorMessage 'tripDescription'}}</span> -->
+        </div>
+
+        <label class="control-label" for="startDate">Leaving</label>
+        <div class="form-group">
+          <div class="input-group datetimepicker">
+              <input name="startDate" class="startDate form-control" value="{{startDate}}" type="text"/>
+              <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+          </div>
+      </div>
+
+        <label class="control-label" for="endDate">Returning</label>
+        <div class="form-group">
+          <div class="input-group datetimepicker">
+              <input name="endDate" class="endDate form-control" value="{{endDate}}" type="text"/>
+              <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+          </div>
+      </div>
+        <input type="submit" value="Submit" class="btn btn-primary submit" />
+  <!--      <button type="button" class="btn btn-primary submit pull-left"><span class="glyphicon glyphicon-ok"></span> Save</button> -->
+        <button type="button" class="btn btn-danger delete pull-right" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-remove"></span> Delete Trip</button>
+
+    </form>
+
 </template>

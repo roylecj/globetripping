@@ -5504,8 +5504,18 @@ button.list-group-item-danger.active:focus {
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
+/* CR - Added text overflow to make sure that it doesn't move onto a new line */
+.ui.button {
+    transition: none !important;
+}
+.panel-body-full {
+  padding: 15px;
+}
 .panel-body {
   padding: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .panel-heading {
   padding: 10px 15px;

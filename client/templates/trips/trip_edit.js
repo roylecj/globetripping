@@ -71,11 +71,8 @@ Template.tripEdit.events({
         // display an error, if there is one...
 
         if (error) {
+          console.log("error");
           throwError(error.reason);
-        }
-
-        if (result.postExists) {
-          throwError('This link has already been posted');
         }
 
         Router.go('tripList');

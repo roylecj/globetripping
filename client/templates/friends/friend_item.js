@@ -3,26 +3,34 @@ Template.friendItem.onCreated( function() {
 });
 
 Template.friendItem.helpers({
+    friendSince: function() {
+      if (this.friendStatus === "INVITE") {
+        return "Invited on " + moment(this.createdAt).format("Do MMM YYYY");
+      } else {
+        return "Friends since " + moment(this.createdAt).format('Do MMM YYYY');        
+      }
+    },
     isDeleteFocus: function(focusType) {
-
-      console.log("focus=" + focusType);
-
       if (focusType === 'x') {
-        if (! Session.set("deleteFocus")) {
+        if (! Session.get("deleteFocus")) {
           return " ";
-        }
-        else
-        {
-          console.log("hiding");
-
-          return "hide ";
+        } else {
+          if (Session.get("deleteItem") === this._id) {
+            return "hide ";
+          } else {
+            return " ";
+          }
         }
       } else {
-        if (! Session.set("deleteFocus")) {
-          return "hide "; }
+        if (! Session.get("deleteFocus")) {
+          return "hide ";
+        } else {
 
-          else {
-            return ""
+            if (Session.get("deleteItem") === this._id) {
+              return "";
+            } else {
+              return "hide ";
+            }
           }
         }
       }
@@ -31,6 +39,22 @@ Template.friendItem.helpers({
 Template.friendItem.events({
    'click .deleteX': function (e) {
      console.log("deleteX Clicked");
+     Session.set("deleteItem", this._id);
      Session.set("deleteFocus", true);
+   },
+   'click .cancelButton': function(e) {
+     Session.set("deleteItem", "");
+     Session.set("deleteFocus", false);
+   },
+   'click .deleteButton': function(e) {
+     // We can delete the record
+
+     var currentFriendId = this._id;
+
+     Friends.remove(currentFriendId);
+
+     sAlert.success("'" + this.friendName + "' Removed", alertConfiguration);
+
+//     Router.go('tripList');
    }
 });

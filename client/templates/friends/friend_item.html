@@ -6,18 +6,18 @@
       </div>
       <div class="col-sm-1">
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-7">
         <h4 class="list-group-item-heading">{{friendName}}</h4>
         <p class="list-group-item-text">{{emailAddress}}</p>
+        <p class="list-group-item-text">{{friendSince}}</p>
       </div>
-      <a class="btn btn-primary btn-xs glyphicon glyphicon-envelope"></a>
-      <a class="btn btn-primary btn-xs glyphicon glyphicon-pencil"></a>
+      <a class="btn btn-primary btn-xs glyphicon glyphicon-envelope {{isDeleteFocus 'x'}}"> </a>
+      <a class="btn btn-primary btn-xs glyphicon glyphicon-pencil {{isDeleteFocus 'x'}}"> </a>
 
-      <a class="deleteX pull-right btn btn-danger btn-xs glyphicon glyphicon-remove  {{isDeleteFocus 'x'}}"></a>
-<!--
-      <span class="deleteButton pull-right btn btn-danger btn-xs {{isDeleteFocus 'button'}}">Delete</span>
-      <span class="deleteButton pull-right btn btn-success btn-xs {{isDeleteFocus 'button'}}">Cancel</span>
--->
+      <a class="deleteX btn btn-danger btn-xs glyphicon glyphicon-remove  {{isDeleteFocus 'x'}}"> </a>
+      <a class="deleteButton btn btn-danger btn-xs glyphicon glyphicon-remove {{isDeleteFocus 'button'}}"></a>
+      <a class="cancelButton btn btn-success btn-xs {{isDeleteFocus 'button'}}">Cancel</a>
+
     </div>
   </a>
 </template>

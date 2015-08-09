@@ -20,3 +20,5 @@ fortawesome:fontawesome
 momentjs:moment
 tsega:bootstrap3-datetimepicker
 semantic:ui-css
+semantic:ui-shape
+semantic:ui
